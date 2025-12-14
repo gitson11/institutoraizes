@@ -1,0 +1,227 @@
+:root {
+  --azul-profundo: #0e1a40;
+  --dourado: #cfaf58;
+  --vinho: #4a1f2a;
+  --branco: #ffffff;
+  --cinza: #d1d1d1;
+  --azul-neutro: #465a7e;
+  --texto: #222222;
+
+  --bg: #f7f7f7;
+  --card: #ffffff;
+  --border: #ececec;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--texto);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, var(--azul-profundo), #070d25);
+  color: var(--branco);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 200px;
+}
+
+.brand img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand span {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-size: 0.95rem;
+}
+
+/* Nav */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.92rem;
+}
+
+header nav a {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: var(--dourado);
+  transition: width 0.2s ease;
+}
+
+header nav a:hover::after { width: 100%; }
+
+/* ===== HERO ===== */
+.hero {
+  background: radial-gradient(circle at top, #182757 0, #070d25 60%);
+  color: var(--branco);
+  padding: 3.2rem 1.25rem 2.8rem;
+}
+
+.hero h1 {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: "Cinzel", serif;
+  font-size: 2.3rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.hero p {
+  max-width: 1100px;
+  margin: 0.65rem auto 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  color: #e6e6e6;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.2rem 1.25rem 3rem;
+}
+
+/* Sections / cards */
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.6rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.container section + section { margin-top: 1.25rem; }
+
+section h2 {
+  font-family: "Cinzel", serif;
+  font-size: 1.15rem;
+  color: var(--azul-profundo);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+section p { font-size: 0.95rem; margin-bottom: 0.75rem; }
+
+/* Lists */
+ul {
+  padding-left: 1.05rem;
+}
+
+li { margin-bottom: 0.35rem; }
+
+/* ===== BUTTONS ===== */
+.btn-primary,
+a.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+
+  background: var(--dourado);
+  color: #1a1306;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 0.62rem 1.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+  transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn-primary:hover,
+a.btn-primary:hover {
+  background: #e1c879;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.26);
+}
+
+.btn-outline,
+a.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(207, 175, 88, 0.9);
+
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--azul-profundo);
+  background: transparent;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.btn-outline:hover,
+a.btn-outline:hover {
+  background: var(--dourado);
+  color: #1a1306;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #070d25;
+  color: #c6c6c6;
+  text-align: center;
+  padding: 1.8rem 1.25rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 2.0rem; }
+}
+
+@media (max-width: 700px) {
+  header nav ul { gap: 0.9rem; font-size: 0.88rem; }
+  .brand span { font-size: 0.9rem; }
+  section { padding: 1.35rem 1.2rem; }
+}

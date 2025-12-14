@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contato – Instituto Raízes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato com o Instituto Raízes. Fale conosco por e-mail, WhatsApp ou formulário.">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #0e1a40;
+      --dourado: #cfaf58;
+      --vinho: #4a1f2a;
+      --branco: #ffffff;
+      --cinza: #d1d1d1;
+      --azul-neutro: #465a7e;
+      --texto: #222222;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Lato", sans-serif;
+      background: #f6f6f6;
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--azul-profundo), #070d25);
+      color: var(--branco);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-icon-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.4rem;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
+      background: var(--dourado);
+      transition: width .2s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--branco);
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 780px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 55px; right: 0;
+        flex-direction: column;
+        background: #070d25;
+        padding: 1rem 2rem;
+        width: 220px;
+      }
+      nav ul.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(circle at top, #182757 0, #070d25 60%);
+      color: var(--branco);
+      text-align: center;
+      padding: 3.5rem 1.25rem;
+    }
+
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0.5rem auto;
+      color: #e6e6e6;
+    }
+
+    /* FORM SECTION */
+
+    section {
+      max-width: 1100px;
+      background: var(--branco);
+      margin: 2.5rem auto;
+      padding: 1.8rem 1.4rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      text-transform: uppercase;
+      color: var(--azul-profundo);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media(max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    label {
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+      display: block;
+      color: #444;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+      border-radius: 0.4rem;
+      border: 1px solid #d4d4d4;
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+
+    .btn-primary {
+      background: var(--dourado);
+      color: #1a1306;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.2s;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .btn-primary:hover {
+      background: #e6c87d;
+      transform: translateY(-2px);
+    }
+
+    /* WHATSAPP BUTTON */
+    .whatsapp-box {
+      background: #e8ffe8;
+      border-left: 4px solid #25d366;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .whatsapp-btn {
+      background: #25d366;
+      color: white;
+      font-weight: bold;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-top: 0.7rem;
+      transition: 0.2s;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ebd59;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #070d25;
+      color: #c6c6c6;
+      padding: 2rem 1.25rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="brand">
+      <img src="assets/img/logo_raizes.png" alt="Instituto Raízes" class="brand-icon-img">
+      <div class="brand-text">
+        <span>Instituto Raízes</span>
+      </div>
+    </div>
+
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1 class="hero-title">Fale Conosco</h1>
+  <p class="hero-subtitle">
+    Estamos aqui para servir você. Envie sua mensagem, dúvida ou solicitação.
+  </p>
+</section>
+
+<section>
+  <h2 class="section-title">Envie sua Mensagem</h2>
+
+  <form action="https://formsubmit.co/rubemacesso@gmail.com" method="POST">
+    <!-- Troque seuemail pelo e-mail oficial -->
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="grid-2">
+      <div>
+        <label>Nome completo</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div>
+        <label>E-mail</label>
+        <input type="email" name="email" required>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <label>Mensagem</label>
+      <textarea name="mensagem" rows="5" required></textarea>
+    </div>
+
+    <button class="btn-primary" type="submit" style="margin-top:1rem;">
+      Enviar Mensagem
+    </button>
+  </form>
+
+  <div class="whatsapp-box">
+    <strong>Prefere falar pelo WhatsApp?</strong>
+    <p>Clique no botão abaixo para iniciar uma conversa direta conosco:</p>
+
+    <a href="https://wa.me/5585994400423" target="_blank" class="whatsapp-btn">
+      💬 Falar no WhatsApp
+    </a>
+    <!-- Substitua SEUNUMERO por: 55DDDNUMERO (ex: 5511999999999) -->
+  </div>
+</section>
+
+<footer>
+  Instituto Raízes – Formação Teológica © 2026<br>
+  Todos os direitos reservados.
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById("nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

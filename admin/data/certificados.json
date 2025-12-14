@@ -1,0 +1,50 @@
+[
+    {
+        "codigo": "RAIZES-2025-AB2BEB43",
+        "aluno_id": 1,
+        "aluno_nome": "Giliard Soares",
+        "aluno_email": "giliard_s@raizes.com",
+        "curso_slug": "escatologia",
+        "curso_nome": "Escatologia Cristocêntrica",
+        "carga_horaria": "90h",
+        "data_conclusao": "8\/12\/2025",
+        "data_emissao": "12\/12\/2025",
+        "coordenador": "Rubem Gitison Rodrigues Alves"
+    },
+    {
+        "codigo": "RAIZES-2025-4BA69761",
+        "aluno_id": 1,
+        "aluno_nome": "Giliard Soares",
+        "aluno_email": "giliard_s@raizes.com",
+        "curso_slug": null,
+        "curso_nome": null,
+        "carga_horaria": null,
+        "data_conclusao": "8\/12\/2025",
+        "data_emissao": "12\/12\/2025",
+        "coordenador": "Rubem Gitison Rodrigues Alves"
+    },
+    {
+        "codigo": "RAIZES-2025-7E50BF4A",
+        "aluno_id": 2,
+        "aluno_nome": "Erika Barbosa",
+        "aluno_email": "erika@raizes.com",
+        "curso_slug": "escatologia",
+        "curso_nome": "Escatologia Cristocêntrica",
+        "carga_horaria": "60h",
+        "data_conclusao": "08\/12\/2025",
+        "data_emissao": "12\/12\/2025",
+        "coordenador": "Rubem Gitison Rodrigues Alves"
+    },
+    {
+        "codigo": "RAIZES-2025-FD43E770",
+        "aluno_id": 1,
+        "aluno_nome": "Giliard Soares",
+        "aluno_email": "giliard_s@raizes.com",
+        "curso_slug": null,
+        "curso_nome": null,
+        "carga_horaria": null,
+        "data_conclusao": "8\/12\/2025",
+        "data_emissao": "12\/12\/2025",
+        "coordenador": "Rubem Gitison Rodrigues Alves"
+    }
+]

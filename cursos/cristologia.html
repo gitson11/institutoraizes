@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Curso de Cristologia – Instituto Raízes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+  name="description"
+  content="Curso de Cristologia do Instituto Raízes – estudo bíblico, histórico e prático sobre a pessoa e a obra de Jesus Cristo."
+  />
+
+  <!-- Google Fonts -->
+  <link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap"
+  rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --azul-profundo: #0e1a40;
+      --dourado: #cfaf58;
+      --vinho: #4a1f2a;
+      --branco: #ffffff;
+      --cinza: #d1d1d1;
+      --azul-neutro: #465a7e;
+      --texto: #222222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+      color: var(--texto);
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ========= HEADER / NAV ========= */
+
+    header {
+      background: linear-gradient(
+        135deg,
+        var(--azul-profundo),
+        #070d25
+      );
+      color: var(--branco);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--dourado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dourado);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.3rem;
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--dourado);
+      transition: width 0.2s ease-in-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--branco);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 780px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 56px;
+        right: 0;
+        background: #070d25;
+        flex-direction: column;
+        padding: 0.75rem 1.25rem;
+        width: 220px;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* ========= HERO ========= */
+
+    .hero {
+      background: radial-gradient(circle at top, #182757 0, #070d25 50%);
+      color: var(--branco);
+      padding: 3.5rem 1.25rem 3rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(207, 175, 88, 0.6);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.75rem;
+      color: #f0e7c4;
+    }
+
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      max-width: 32rem;
+      color: #e5e5e5;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-info-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chip {
+      background: rgba(7, 13, 37, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(207, 175, 88, 0.5);
+      padding: 0.25rem 0.9rem;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .chip span.icon {
+      font-size: 0.9rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--dourado);
+      color: #1a1306;
+      border-radius: 999px;
+      padding: 0.6rem 1.6rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      transition: transform 0.1s ease, box-shadow 0.1s ease,
+      background 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      background: #e1c879;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline {
+      border-radius: 999px;
+      border: 1px solid rgba(229, 229, 229, 0.7);
+      padding: 0.5rem 1.4rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: transparent;
+      color: #f5f5f5;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--dourado);
+    }
+
+    .hero-note {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: #c6c6c6;
+    }
+
+    .hero-card {
+      background: rgba(7, 13, 37, 0.9);
+      border-radius: 1.2rem;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid rgba(207, 175, 88, 0.6);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-card-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--dourado);
+    }
+
+    .hero-card p {
+      font-size: 0.87rem;
+      color: #e4e4e4;
+    }
+
+    .hero-card ul {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      font-size: 0.85rem;
+      color: #d8d8d8;
+    }
+
+    .hero-card ul li + li {
+      margin-top: 0.2rem;
+    }
+
+    /* ========= SECTIONS ========= */
+
+    main {
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+      background: var(--branco);
+      border-radius: 1.2rem;
+      padding: 1.8rem 1.7rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    section:last-of-type {
+      margin-top: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      font-size: 1.3rem;
+      color: var(--azul-profundo);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      color: var(--azul-neutro);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    section p {
+      font-size: 0.93rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    @media (max-width: 780px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    ul.styled {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.styled li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.93rem;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.styled li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--dourado);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #e2e2e2;
+      background: #fafafa;
+    }
+
+    /* ========= MÓDULOS ========= */
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin-top: 0.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .module-card {
+      border-radius: 0.9rem;
+      border: 1px solid #ececec;
+      padding: 1rem 1rem 0.9rem;
+      background: #fcfcfc;
+    }
+
+    .module-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      color: var(--vinho);
+      margin-bottom: 0.2rem;
+    }
+
+    .module-tagline {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 0.4rem;
+    }
+
+    .module-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.86rem;
+    }
+
+    .module-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .module-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--azul-neutro);
+      font-size: 0.9rem;
+    }
+
+    /* ========= CALLOUT / PRE-REQ ========= */
+
+    .callout {
+      border-radius: 0.9rem;
+      border-left: 4px solid var(--dourado);
+      background: #fffaf0;
+      padding: 0.9rem 1rem;
+      font-size: 0.86rem;
+      margin-top: 0.8rem;
+    }
+
+    .callout strong {
+      color: var(--vinho);
+    }
+
+    /* ========= FOOTER ========= */
+
+    footer {
+      background: #070d25;
+      color: #c6c6c6;
+      padding: 1.5rem 1.25rem 1.8rem;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-size: 0.8rem;
+    }
+
+    .footer-brand span {
+      display: block;
+    }
+
+    .footer-coord {
+      text-align: right;
+    }
+
+    @media (max-width: 700px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-coord {
+        text-align: left;
+      }
+    }
+    .brand-icon-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <img src="../assets/img/logo_raizes.png" alt="Instituto Raízes" class="brand-icon-img" />
+        <div class="brand-text">
+          <span>Instituto Raízes</span>
+          <span>Curso de Cristologia</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleNav()">
+        ☰
+      </button>
+
+      <nav>
+        <ul id="nav-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../sobre.html">Sobre</a></li>
+          <li><a href="../cursos.html">Cursos</a></li>
+          <li><a href="../contato.html">Contato</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">
+          <span>Formação Teológica</span>
+          <span>•</span>
+          <span>Cristologia</span>
+        </div>
+        <h1 class="hero-title">Curso de Cristologia</h1>
+        <p class="hero-subtitle">
+          Estudo bíblico, histórico e prático sobre a pessoa e a obra de
+          Jesus Cristo, centro da fé e da vida da igreja.
+        </p>
+
+        <div class="hero-info-chips">
+          <div class="chip">
+            <span class="icon">📅</span>
+            <span>Início: Março/2026</span>
+          </div>
+          <div class="chip">
+            <span class="icon">⏱️</span>
+            <span>60h em 7 meses • 2h semanais</span>
+          </div>
+          <div class="chip">
+            <span class="icon">📘</span>
+            <span>Nível: Formação Teológica</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#inscricao">
+            <button class="btn-primary">Quero me inscrever</button>
+          </a>
+          <a href="#conteudo">
+            <button class="btn-outline">
+              Ver conteúdo programático →
+            </button>
+          </a>
+        </div>
+
+        <p class="hero-note">
+          Este curso é pré-requisito para Escatologia Cristocêntrica,
+          Apologética Cristológica e Introdução à História da Igreja.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <h2 class="hero-card-title">Por que estudar Cristologia?</h2>
+        <p>
+          A cristologia é o coração da teologia: entender quem é Jesus e o
+          que Ele fez transforma nossa pregação, nossa leitura bíblica e nossa
+          caminhada diária com Deus.
+        </p>
+        <ul>
+          <li>Fortalecer a fé diante de dúvidas e heresias.</li>
+          <li>Preparar líderes, pregadores e discipuladores.</li>
+          <li>Ler a Bíblia com foco em Cristo, do Gênesis ao Apocalipse.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- SOBRE / EMENTA -->
+    <section id="sobre">
+      <div class="section-header">
+        <h2 class="section-title">Ementa do Curso</h2>
+        <span class="section-tag">Sobre o curso</span>
+      </div>
+      <p>
+        Estudo sistemático da pessoa e obra de Jesus Cristo segundo as
+        Escrituras, contemplando sua plena divindade e humanidade, sua missão
+        na história, sua obra redentora, seu impacto na vida da igreja e seu
+        reinado presente e futuro.
+      </p>
+      <p>
+        O curso trabalha fundamentos bíblicos, desenvolvimento histórico da
+        cristologia (Patrística, Concílios, Reforma e tradições evangélicas),
+        controvérsias antigas e atuais, cristologia bíblica (AT, Evangelhos,
+        Cartas Paulinas e Gerais, Hebreus e Apocalipse), união das naturezas,
+        ministério terreno, obra salvífica e implicações práticas para
+        discipulado, espiritualidade e missão.
+      </p>
+
+      <div class="callout">
+        <strong>Pré-requisito para a trilha teológica:</strong> este curso
+        serve como base obrigatória para as disciplinas de Escatologia
+        (Cristocêntrica), Apologética Cristológica e Introdução à História da
+        Igreja dentro do Instituto Raízes.
+      </div>
+    </section>
+
+    <!-- OBJETIVOS / COMPETÊNCIAS -->
+    <section id="objetivos">
+      <div class="section-header">
+        <h2 class="section-title">Objetivos & Competências</h2>
+        <span class="section-tag">Formação integral</span>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem;">
+            Objetivo geral
+          </h3>
+          <p>
+            Levar o estudante a compreender e apresentar de forma bíblica,
+            equilibrada e prática a doutrina da pessoa e obra de Cristo,
+            reconhecendo sua centralidade para a fé cristã e para a vida da
+            igreja.
+          </p>
+
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1rem; margin: 0.8rem 0 0.4rem;">
+            Objetivos específicos
+          </h3>
+          <ul class="styled">
+            <li>
+              Identificar e interpretar textos bíblicos fundamentais sobre
+              Cristo no AT e NT.
+            </li>
+            <li>
+              Compreender o desenvolvimento histórico da cristologia na
+              igreja.
+            </li>
+            <li>
+              Avaliar heresias antigas e contemporâneas, defendendo a fé
+              cristã bíblica.
+            </li>
+            <li>
+              Explicar a união das naturezas de Cristo, seu ministério e sua
+              obra redentora.
+            </li>
+            <li>
+              Conectar Cristologia com Soteriologia, Eclesiologia, Missão e
+              Escatologia.
+            </li>
+            <li>
+              Comunicar a doutrina de Cristo com clareza pastoral e
+              relevância espiritual.
+            </li>
+            <li>
+              Responder apologeticamente a desafios atuais sobre a identidade
+              de Jesus.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem;">
+            Competências desenvolvidas
+          </h3>
+          <ul class="styled">
+            <li>Leitura bíblica tipológica e intertextual.</li>
+            <li>Capacidade de síntese doutrinária.</li>
+            <li>Análise histórica das tradições cristãs.</li>
+            <li>
+              Defesa da fé cristã diante de desafios teológicos e culturais.
+            </li>
+            <li>Produção literária (fichamentos, resenhas, artigos).</li>
+            <li>
+              Comunicação pastoral e evangelística da doutrina de Cristo.
+            </li>
+          </ul>
+
+          <div class="pill-row" style="margin-top: 0.8rem;">
+            <span class="pill">Teologia Bíblica</span>
+            <span class="pill">História da Igreja</span>
+            <span class="pill">Pregação</span>
+            <span class="pill">Apologética</span>
+            <span class="pill">Espiritualidade</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÚBLICO-ALVO -->
+    <section id="publico">
+      <div class="section-header">
+        <h2 class="section-title">Público-alvo</h2>
+        <span class="section-tag">Para quem é este curso?</span>
+      </div>
+      <p>
+        O Curso de Cristologia – Instituto Raízes foi pensado para cristãos que
+        desejam aprofundar-se no conhecimento bíblico e teológico de forma
+        séria, mas aplicável à vida e ao ministério.
+      </p>
+
+      <ul class="styled" style="margin-top: 0.6rem;">
+        <li>Líderes de igrejas locais.</li>
+        <li>Futuros pregadores e ensinadores da Palavra.</li>
+        <li>Professores de Escola Bíblica Dominical.</li>
+        <li>Discipuladores e líderes de pequenos grupos.</li>
+        <li>Cristãos que buscam formação teológica consistente.</li>
+      </ul>
+    </section>
+
+    <!-- CONTEÚDO PROGRAMÁTICO -->
+    <section id="conteudo">
+      <div class="section-header">
+        <h2 class="section-title">Conteúdo Programático</h2>
+        <span class="section-tag">Módulos do curso</span>
+      </div>
+      <p>
+        O curso é organizado em oito módulos, que percorrem desde a presença
+        de Cristo no Antigo Testamento até as implicações práticas e
+        escatológicas da cristologia.
+      </p>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <h3 class="module-title">Módulo 1 – Introdução à Cristologia</h3>
+          <p class="module-tagline">
+            O coração da teologia e os grandes debates sobre Jesus.
+          </p>
+          <ul class="module-list">
+            <li>Cristologia na Teologia Sistemática.</li>
+            <li>Métodos de estudo: bíblico, histórico e pastoral.</li>
+            <li>Por que Jesus é o centro da fé cristã?</li>
+            <li>A “questão de Jesus” nos debates contemporâneos.</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h3 class="module-title">
+            Módulo 2 – Cristologia Bíblica: Antigo Testamento
+          </h3>
+          <p class="module-tagline">
+            O Cristo prometido nas figuras, profecias e tipologias.
+          </p>
+          <ul class="module-list">
+            <li>Messias como Profeta, Sacerdote e Rei.</li>
+            <li>Profecias messiânicas diretas e indiretas.</li>
+            <li>Servo do Senhor (Isaías 42; 49; 50; 52–53).</li>
+            <li>Filho do Homem em Daniel 7 e as tipologias bíblicas.</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h3 class="module-title">
+            Módulo 3 – Cristologia nos Evangelhos e Atos
+          </h3>
+          <p class="module-tagline">
+            Jesus como Messias, Senhor e Filho de Deus.
+          </p>
+          <ul class="module-list">
+            <li>Títulos cristológicos nos Evangelhos.</li>
+            <li>Diferenças e harmonias entre sinóticos e João.</li>
+            <li>Milagres como sinais da identidade de Jesus.</li>
+            <li>O anúncio apostólico em Atos.</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h3 class="module-title">Módulo 4 – Cristologia Paulina e Geral</h3>
+          <p class="module-tagline">
+            A profundidade de Cristo nas cartas apostólicas.
+          </p>
+          <ul class="module-list">
+            <li>Filipenses 2: esvaziamento e encarnação.</li>
+            <li>Colossenses 1: supremacia e abrangência cósmica.</li>
+            <li>Romanos e a obra salvífica de Cristo.</li>
+            <li>Hebreus e 1 Pedro: sacerdote, modelo e esperança.</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h3 class="module-title">
+            Módulo 5 – Desenvolvimento Histórico da Doutrina de Cristo
+          </h3>
+          <p class="module-tagline">
+            Dos Pais da Igreja ao evangelicalismo contemporâneo.
+          </p>
+          <ul class="module-list">
+            <li>Patrística e resposta às heresias.</li>
+            <li>Concílios de Niceia, Constantinopla, Éfeso e Calcedônia.</li>
+            <li>Reforma e cristologia protestante.</li>
+            <li>
+              Cristologias modernas: liberalismo, kenose, pentecostalismo.
+            </li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h3 class="module-title">Módulo 6 – A Pessoa de Cristo</h3>
+          <p class="module-tagline">
+            Verdadeiramente Deus, verdadeiramente homem.
+          </p>
+          <ul class="module-list">
+            <li>Plena humanidade e divindade.</li>
+            <li>União das duas naturezas em uma só pessoa.</li>
+            <li>Impecabilidade, caráter e missão do Filho.</li>
+            <li>Títulos de Cristo e seus significados.</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h3 class="module-title">Módulo 7 – A Obra de Cristo</h3>
+          <p class="module-tagline">
+            Cruz, ressurreição, ascensão e reinado.
+          </p>
+          <ul class="module-list">
+            <li>Humilhação e exaltação de Cristo.</li>
+            <li>
+              A cruz: expiação, substituição, vitória e reconciliação.
+            </li>
+            <li>Ressurreição como centro da fé cristã.</li>
+            <li>Ofícios de Cristo: Profeta, Sacerdote e Rei.</li>
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h3 class="module-title">
+            Módulo 8 – Cristologia Prática, Pastoral e Escatológica
+          </h3>
+          <p class="module-tagline">
+            Do estudo à vida: Cristo no púlpito, no coração e na esperança.
+          </p>
+          <ul class="module-list">
+            <li>Pregação centrada em Cristo.</li>
+            <li>
+              Cristologia e vida devocional, santificação e dependência do
+              Espírito.
+            </li>
+            <li>Ética cristã à luz de Cristo.</li>
+            <li>Retorno de Cristo, esperança e missão.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSCRIÇÃO / CONTATO -->
+    <section id="inscricao">
+      <div class="section-header">
+        <h2 class="section-title">Inscrição & Informações</h2>
+        <span class="section-tag">Próximos passos</span>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <p>
+            As vagas para o Curso de Cristologia – Turma 2026 são limitadas
+            para garantir acompanhamento próximo, espaço para perguntas e
+            formação pastoral sólida.
+          </p>
+          <p style="margin-top: 0.5rem;">
+            Preencha o formulário de interesse ou entre em contato com a
+            coordenação para receber detalhes sobre horários, local/modalidade
+            e investimento.
+          </p>
+
+          <ul class="styled" style="margin-top: 0.6rem;">
+            <li>Início previsto: Março/2026.</li>
+            <li>Carga horária: 60h ao longo de 7 meses.</li>
+            <li>Ritmo: 2 horas semanais.</li>
+            <li>
+              Possibilidade de módulos estendidos (90h) para aprofundamento.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <form
+          style="
+          background: #fafafa;
+          border-radius: 0.9rem;
+          border: 1px solid #ececec;
+          padding: 1rem 1rem 0.9rem;
+          font-size: 0.9rem;
+          "
+          >
+          <h3
+          style="
+          font-family: 'Playfair Display', serif;
+          font-size: 1rem;
+          margin-bottom: 0.6rem;
+          color: var(--azul-profundo);
+          "
+          >
+          Formulário de interesse
+        </h3>
+        <p style="font-size: 0.85rem; margin-bottom: 0.7rem;">
+          Este é um exemplo de formulário. Você pode integrá-lo depois com
+          Google Forms ou outro sistema de inscrição.
+        </p>
+
+        <div style="margin-bottom: 0.5rem;">
+          <label for="nome" style="display: block; margin-bottom: 0.15rem;"
+          >Nome completo</label
+          >
+          <input
+          id="nome"
+          type="text"
+          placeholder="Seu nome"
+          style="
+          width: 100%;
+          padding: 0.4rem 0.5rem;
+          border-radius: 0.4rem;
+          border: 1px solid #d8d8d8;
+          font-size: 0.9rem;
+          "
+          />
+        </div>
+
+        <div style="margin-bottom: 0.5rem;">
+          <label for="email" style="display: block; margin-bottom: 0.15rem;"
+          >E-mail</label
+          >
+          <input
+          id="email"
+          type="email"
+          placeholder="seuemail@exemplo.com"
+          style="
+          width: 100%;
+          padding: 0.4rem 0.5rem;
+          border-radius: 0.4rem;
+          border: 1px solid #d8d8d8;
+          font-size: 0.9rem;
+          "
+          />
+        </div>
+
+        <div style="margin-bottom: 0.6rem;">
+          <label for="igreja" style="display: block; margin-bottom: 0.15rem;"
+          >Igreja / Ministério (opcional)</label
+          >
+          <input
+          id="igreja"
+          type="text"
+          placeholder="Nome da igreja ou ministério"
+          style="
+          width: 100%;
+          padding: 0.4rem 0.5rem;
+          border-radius: 0.4rem;
+          border: 1px solid #d8d8d8;
+          font-size: 0.9rem;
+          "
+          />
+        </div>
+
+        <div style="margin-bottom: 0.8rem;">
+          <label
+          for="motivo"
+          style="display: block; margin-bottom: 0.15rem;"
+          >Por que você quer fazer este curso?</label
+          >
+          <textarea
+          id="motivo"
+          rows="3"
+          style="
+          width: 100%;
+          padding: 0.4rem 0.5rem;
+          border-radius: 0.4rem;
+          border: 1px solid #d8d8d8;
+          font-size: 0.9rem;
+          resize: vertical;
+          "
+          ></textarea>
+        </div>
+
+        <button
+        type="button"
+        class="btn-primary"
+        style="width: 100%; justify-content: center; display: inline-flex;"
+        >
+        Enviar interesse
+      </button>
+
+      <p
+      style="
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: #777;
+      text-align: center;
+      "
+      >
+      Você também pode escrever diretamente para:
+      <strong>rubemacesso@gmail.com</strong>
+    </p>
+  </form>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span>Curso de Cristologia – Instituto Raízes 2026</span>
+      <span>Instituto Raízes</span>
+    </div>
+
+    <div class="footer-coord">
+      <span>Coordenação do Curso:</span>
+      <strong>Rubem Gitison Rodrigues Alves</strong>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("open");
+  }
+</script>
+</body>
+</html>

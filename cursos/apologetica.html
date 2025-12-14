@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Curso de Apologética Cristológica – Instituto Raízes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Curso de Apologética Cristológica do Instituto Raízes – defesa bíblica, histórica e filosófica da pessoa e da obra de Jesus Cristo."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --azul-profundo: #0e1a40;
+        --dourado: #cfaf58;
+        --vinho: #4a1f2a;
+        --branco: #ffffff;
+        --cinza: #d1d1d1;
+        --azul-neutro: #465a7e;
+        --texto: #222222;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--texto);
+        background-color: #f7f7f7;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ========= HEADER / NAV ========= */
+
+      header {
+        background: linear-gradient(135deg, var(--azul-profundo), #070d25);
+        color: var(--branco);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0.8rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .brand-icon-img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-text span:first-child {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .brand-text span:last-child {
+        font-size: 0.8rem;
+        opacity: 0.85;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1.3rem;
+        list-style: none;
+        font-size: 0.9rem;
+      }
+
+      nav a {
+        position: relative;
+        padding-bottom: 0.1rem;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--dourado);
+        transition: width 0.2s ease-in-out;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* Mobile nav */
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--branco);
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 780px) {
+        nav ul {
+          display: none;
+          position: absolute;
+          top: 56px;
+          right: 0;
+          background: #070d25;
+          flex-direction: column;
+          padding: 0.75rem 1.25rem;
+          width: 220px;
+          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+        }
+
+        nav ul.open {
+          display: flex;
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+      }
+
+      /* ========= HERO ========= */
+
+      .hero {
+        background: radial-gradient(circle at top, #182757 0, #070d25 50%);
+        color: var(--branco);
+        padding: 3.5rem 1.25rem 3rem;
+      }
+
+      .hero-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.2rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid rgba(207, 175, 88, 0.6);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 0.75rem;
+        color: #f0e7c4;
+      }
+
+      .hero-title {
+        font-family: "Cinzel", serif;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-subtitle {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        max-width: 32rem;
+        color: #e5e5e5;
+        margin-bottom: 1.4rem;
+      }
+
+      .hero-info-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .chip {
+        background: rgba(7, 13, 37, 0.9);
+        border-radius: 999px;
+        border: 1px solid rgba(207, 175, 88, 0.5);
+        padding: 0.25rem 0.9rem;
+        font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .chip span.icon {
+        font-size: 0.9rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .btn-primary {
+        background: var(--dourado);
+        color: #1a1306;
+        border-radius: 999px;
+        padding: 0.6rem 1.6rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        transition: transform 0.1s ease, box-shadow 0.1s ease,
+          background 0.1s ease;
+      }
+
+      .btn-primary:hover {
+        background: #e1c879;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .btn-outline {
+        border-radius: 999px;
+        border: 1px solid rgba(229, 229, 229, 0.7);
+        padding: 0.5rem 1.4rem;
+        font-size: 0.85rem;
+        cursor: pointer;
+        background: transparent;
+        color: #f5f5f5;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--dourado);
+      }
+
+      .hero-note {
+        margin-top: 0.8rem;
+        font-size: 0.8rem;
+        color: #c6c6c6;
+      }
+
+      .hero-card {
+        background: rgba(7, 13, 37, 0.9);
+        border-radius: 1.2rem;
+        padding: 1.5rem 1.4rem;
+        border: 1px solid rgba(207, 175, 88, 0.6);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+      }
+
+      .hero-card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: var(--dourado);
+      }
+
+      .hero-card p {
+        font-size: 0.87rem;
+        color: #e4e4e4;
+      }
+
+      .hero-card ul {
+        margin-top: 0.5rem;
+        padding-left: 1rem;
+        font-size: 0.85rem;
+        color: #d8d8d8;
+      }
+
+      .hero-card ul li + li {
+        margin-top: 0.2rem;
+      }
+
+      /* ========= SECTIONS ========= */
+
+      main {
+        padding: 2.5rem 1.25rem 3rem;
+      }
+
+      section {
+        max-width: 1100px;
+        margin: 0 auto 2.5rem;
+        background: var(--branco);
+        border-radius: 1.2rem;
+        padding: 1.8rem 1.7rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      section:last-of-type {
+        margin-top: 3.5rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.3rem;
+        color: var(--azul-profundo);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .section-tag {
+        font-size: 0.75rem;
+        color: var(--azul-neutro);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      section p {
+        font-size: 0.93rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+
+      @media (max-width: 780px) {
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      ul.styled {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      ul.styled li {
+        position: relative;
+        padding-left: 1.2rem;
+        font-size: 0.93rem;
+        margin-bottom: 0.4rem;
+      }
+
+      ul.styled li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--dourado);
+      }
+
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.1rem;
+        margin-top: 0.6rem;
+      }
+
+      @media (max-width: 900px) {
+        .modules-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .module-card {
+        border-radius: 0.9rem;
+        border: 1px solid #ececec;
+        padding: 1rem 1rem 0.9rem;
+        background: #fcfcfc;
+      }
+
+      .module-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        color: var(--vinho);
+        margin-bottom: 0.2rem;
+      }
+
+      .module-tagline {
+        font-size: 0.8rem;
+        color: #777;
+        margin-bottom: 0.4rem;
+      }
+
+      .module-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 0.86rem;
+      }
+
+      .module-list li {
+        position: relative;
+        padding-left: 1.1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .module-list li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--azul-neutro);
+        font-size: 0.9rem;
+      }
+
+      .callout {
+        border-radius: 0.9rem;
+        border-left: 4px solid var(--dourado);
+        background: #fffaf0;
+        padding: 0.9rem 1rem;
+        font-size: 0.86rem;
+        margin-top: 0.8rem;
+      }
+
+      .callout strong {
+        color: var(--vinho);
+      }
+
+      /* ========= FOOTER ========= */
+
+      footer {
+        background: #070d25;
+        color: #c6c6c6;
+        padding: 1.5rem 1.25rem 1.8rem;
+        font-size: 0.8rem;
+      }
+
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-brand span {
+        display: block;
+      }
+
+      .footer-coord {
+        text-align: right;
+      }
+
+      @media (max-width: 700px) {
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-coord {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="brand">
+          <img src="../assets/img/logo_raizes.png" alt="Instituto Raízes" class="brand-icon-img" />
+          <div class="brand-text">
+            <span>Instituto Raízes</span>
+            <span>Curso de Apologética Cristológica</span>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Abrir menu" onclick="toggleNav()">
+          ☰
+        </button>
+
+        <nav>
+          <ul id="nav-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../sobre.html">Sobre</a></li>
+            <li><a href="../cursos.html">Cursos</a></li>
+            <li><a href="../contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-tag">
+            <span>Formação Teológica</span>
+            <span>•</span>
+            <span>Apologética</span>
+          </div>
+          <h1 class="hero-title">Curso de Apologética Cristológica</h1>
+          <p class="hero-subtitle">
+            Defesa bíblica, histórica e filosófica da pessoa e da obra de Jesus Cristo diante dos desafios contemporâneos.
+          </p>
+
+          <div class="hero-info-chips">
+            <div class="chip">
+              <span class="icon">📅</span>
+              <span>Início: a definir – 2026</span>
+            </div>
+            <div class="chip">
+              <span class="icon">⏱️</span>
+              <span>60h • 2h semanais</span>
+            </div>
+            <div class="chip">
+              <span class="icon">📘</span>
+              <span>Nível: Formação Teológica</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#inscricao">
+              <button class="btn-primary">Quero me inscrever</button>
+            </a>
+            <a href="#conteudo">
+              <button class="btn-outline">
+                Ver conteúdo programático →
+              </button>
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Pré-requisito recomendado: Curso de Cristologia – Instituto Raízes.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <h2 class="hero-card-title">Por que estudar Apologética Cristológica?</h2>
+          <p>
+            Em um contexto de dúvidas, relativismo e pluralismo religioso, a igreja é chamada a dar razões da esperança que há
+            nela, tendo Cristo como centro da defesa da fé.
+          </p>
+          <ul>
+            <li>Responder a objeções sobre a identidade de Jesus.</li>
+            <li>Dialogar com céticos, seitas e outras religiões.</li>
+            <li>Fortalecer a convicção e a alegria em Cristo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- SOBRE / EMENTA -->
+      <section id="sobre">
+        <div class="section-header">
+          <h2 class="section-title">Ementa do Curso</h2>
+          <span class="section-tag">Sobre o curso</span>
+        </div>
+        <p>
+          Estudo sistemático da defesa da fé cristã centrada na pessoa e obra de Jesus Cristo. O curso aborda fundamentos da
+          apologética, confiabilidade dos Evangelhos, evidências históricas da vida, morte e ressurreição de Jesus, bem como
+          respostas cristológicas a objeções filosóficas, religiosas e culturais contemporâneas.
+        </p>
+        <p>
+          Serão examinadas objeções clássicas à divindade de Cristo, desafios modernos à sua unicidade, leituras alternativas
+          promovidas por seitas e outras religiões, além de estratégias práticas para apresentar Cristo com clareza, amor e
+          firmeza bíblica em contextos de evangelização, discipulado e ensino.
+        </p>
+
+        <div class="callout">
+          <strong>Pré-requisito recomendado:</strong> Curso de Cristologia – Instituto Raízes, ou conhecimento equivalente da
+          doutrina da pessoa e obra de Cristo.
+        </div>
+      </section>
+
+      <!-- OBJETIVOS / COMPETÊNCIAS -->
+      <section id="objetivos">
+        <div class="section-header">
+          <h2 class="section-title">Objetivos & Competências</h2>
+          <span class="section-tag">Formação integral</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3
+              style="font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem;"
+            >
+              Objetivo geral
+            </h3>
+            <p>
+              Capacitar o estudante a defender a fé cristã com foco na identidade de Cristo, articulando respostas bíblicas,
+              históricas e filosóficas com clareza, fidelidade às Escrituras e sensibilidade pastoral.
+            </p>
+
+            <h3
+              style="font-family: 'Playfair Display', serif; font-size: 1rem; margin: 0.8rem 0 0.4rem;"
+            >
+              Objetivos específicos
+            </h3>
+            <ul class="styled">
+              <li>Compreender os fundamentos bíblicos da apologética cristã.</li>
+              <li>
+                Avaliar objeções clássicas e contemporâneas à divindade, humanidade e obra de Cristo.
+              </li>
+              <li>
+                Conhecer evidências históricas da confiabilidade dos Evangelhos e da ressurreição.
+              </li>
+              <li>
+                Analisar como diferentes religiões e seitas interpretam (ou distorcem) a pessoa de Jesus.
+              </li>
+              <li>
+                Desenvolver argumentos cristocêntricos para diálogo com céticos, religiosos e secularizados.
+              </li>
+              <li>
+                Integrar apologética com evangelização, pregação e discipulado.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3
+              style="font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem;"
+            >
+              Competências desenvolvidas
+            </h3>
+            <ul class="styled">
+              <li>Leitura crítica de argumentos filosóficos e religiosos.</li>
+              <li>Defesa da fé a partir das Escrituras e da história.</li>
+              <li>Capacidade de responder com graça e verdade a objeções.</li>
+              <li>Articulação de um testemunho cristocêntrico em contextos diversos.</li>
+              <li>Discernimento quanto a seitas e distorções cristológicas.</li>
+              <li>Uso da apologética como apoio à missão e ao discipulado.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PÚBLICO-ALVO -->
+      <section id="publico">
+        <div class="section-header">
+          <h2 class="section-title">Público-alvo</h2>
+          <span class="section-tag">Para quem é este curso?</span>
+        </div>
+        <p>
+          O Curso de Apologética Cristológica é voltado para cristãos que desejam responder de forma bíblica e consistente aos
+          questionamentos sobre Jesus em seu contexto de vida e ministério.
+        </p>
+
+        <ul class="styled" style="margin-top: 0.6rem;">
+          <li>Pregadores, evangelistas e missionários.</li>
+          <li>Professores de EBD, líderes de jovens e pequenos grupos.</li>
+          <li>Estudantes de teologia e obreiros em formação.</li>
+          <li>Cristãos que convivem com céticos, religiosos de outras tradições ou pessoas em dúvida sobre a fé.</li>
+        </ul>
+      </section>
+
+      <!-- CONTEÚDO PROGRAMÁTICO -->
+      <section id="conteudo">
+        <div class="section-header">
+          <h2 class="section-title">Conteúdo Programático</h2>
+          <span class="section-tag">Módulos do curso</span>
+        </div>
+        <p>
+          O curso é organizado em oito módulos, que percorrem desde os fundamentos da apologética até aplicações práticas em
+          contextos reais de evangelização e discipulado.
+        </p>
+
+        <div class="modules-grid">
+          <div class="module-card">
+            <h3 class="module-title">Módulo 1 – Introdução à Apologética Cristológica</h3>
+            <p class="module-tagline">
+              A razão da esperança em Cristo.
+            </p>
+            <ul class="module-list">
+              <li>O que é apologética? Fundamentos bíblicos (1Pe 3.15).</li>
+              <li>Por que focar em Cristo na defesa da fé?</li>
+              <li>Modelos apologéticos e abordagens principais.</li>
+              <li>Postura pastoral, humildade e amor na apologética.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">
+              Módulo 2 – Confiabilidade dos Evangelhos e Testemunhos sobre Jesus
+            </h3>
+            <p class="module-tagline">
+              Podemos confiar nos relatos sobre Cristo?
+            </p>
+            <ul class="module-list">
+              <li>Datação e autoria dos Evangelhos.</li>
+              <li>Manuscritos, tradição oral e transmissão do texto.</li>
+              <li>Critérios históricos aplicados aos Evangelhos.</li>
+              <li>Respostas a alegações de contradições e mitos.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">
+              Módulo 3 – Evidências da Divindade e Humanidade de Jesus
+            </h3>
+            <p class="module-tagline">
+              Verdadeiramente Deus, verdadeiramente homem.
+            </p>
+            <ul class="module-list">
+              <li>Afirmações diretas e indiretas de Cristo sobre si mesmo.</li>
+              <li>Títulos cristológicos e sua relevância apologética.</li>
+              <li>Milagres, autoridade e perdão de pecados.</li>
+              <li>A importância da plena humanidade para a defesa da fé.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 4 – Historicidade da Morte e Ressurreição</h3>
+            <p class="module-tagline">
+              O coração da defesa cristã.
+            </p>
+            <ul class="module-list">
+              <li>Fatos mínimos amplamente aceitos por estudiosos.</li>
+              <li>Teorias alternativas: desmaio, roubo do corpo, lenda.</li>
+              <li>Testemunhas oculares e transformação dos discípulos.</li>
+              <li>A ressurreição como base da esperança e da apologética.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">
+              Módulo 5 – Objeções Filosóficas e Culturais à Fé em Cristo
+            </h3>
+            <p class="module-tagline">
+              Cristologia em meio ao ceticismo.
+            </p>
+            <ul class="module-list">
+              <li>Problema do mal e sofrimento: onde está Deus?</li>
+              <li>Relativismo, pluralismo e “todas as religiões são iguais”.</li>
+              <li>Naturalismo, ciência e milagres.</li>
+              <li>Respostas cristocêntricas a partir das Escrituras.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">
+              Módulo 6 – Jesus nas Religiões e nas Seitas
+            </h3>
+            <p class="module-tagline">
+              Cristologia comparada.
+            </p>
+            <ul class="module-list">
+              <li>Jesus no islamismo, judaísmo, espiritismo e outras religiões.</li>
+              <li>Testemunhas de Jeová, mórmons e outras seitas cristológicas.</li>
+              <li>Erros principais sobre a pessoa e obra de Cristo.</li>
+              <li>Como responder com firmeza e respeito.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">
+              Módulo 7 – Apologética no Púlpito, no Discipulado e no Dia a Dia
+            </h3>
+            <p class="module-tagline">
+              Da teoria à prática.
+            </p>
+            <ul class="module-list">
+              <li>Pregação que responde objeções reais.</li>
+              <li>Uso da apologética no aconselhamento e discipulado.</li>
+              <li>Conversas cotidianas com familiares, amigos e colegas.</li>
+              <li>Como não transformar apologética em agressividade.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">
+              Módulo 8 – Oficina de Casos Apologéticos
+            </h3>
+            <p class="module-tagline">
+              Treinando respostas centradas em Cristo.
+            </p>
+            <ul class="module-list">
+              <li>Estudo de casos reais e perguntas frequentes.</li>
+              <li>Simulações de diálogos com céticos e religiosos.</li>
+              <li>Construção de respostas bíblicas em grupo.</li>
+              <li>Planejando uma vida de testemunho cristocêntrico.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSCRIÇÃO / CONTATO -->
+      <section id="inscricao">
+        <div class="section-header">
+          <h2 class="section-title">Inscrição & Informações</h2>
+          <span class="section-tag">Próximos passos</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <p>
+              As vagas para o Curso de Apologética Cristológica são limitadas, a fim de proporcionar ambiente de perguntas,
+              diálogo e acompanhamento próximo dos estudantes.
+            </p>
+            <p style="margin-top: 0.5rem;">
+              Preencha o formulário de interesse ou entre em contato com a coordenação para receber detalhes sobre horários,
+              local/modalidade e investimento.
+            </p>
+
+            <ul class="styled" style="margin-top: 0.6rem;">
+              <li>Carga horária sugerida: 60h.</li>
+              <li>Ritmo: 2 horas semanais.</li>
+              <li>Formato: presencial, on-line ou híbrido (a definir pela coordenação).</li>
+              <li>Certificado emitido pelo Instituto Raízes.</li>
+            </ul>
+          </div>
+
+          <div>
+            <form
+              style="
+                background: #fafafa;
+                border-radius: 0.9rem;
+                border: 1px solid #ececec;
+                padding: 1rem 1rem 0.9rem;
+                font-size: 0.9rem;
+              "
+            >
+              <h3
+                style="
+                  font-family: 'Playfair Display', serif;
+                  font-size: 1rem;
+                  margin-bottom: 0.6rem;
+                  color: var(--azul-profundo);
+                "
+              >
+                Formulário de interesse
+              </h3>
+              <p style="font-size: 0.85rem; margin-bottom: 0.7rem;">
+                Este é um exemplo de formulário. Você pode integrá-lo depois com Google Forms ou outro sistema de inscrição.
+              </p>
+
+              <div style="margin-bottom: 0.5rem;">
+                <label for="nome" style="display: block; margin-bottom: 0.15rem;"
+                  >Nome completo</label
+                >
+                <input
+                  id="nome"
+                  type="text"
+                  placeholder="Seu nome"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                  "
+                />
+              </div>
+
+              <div style="margin-bottom: 0.5rem;">
+                <label for="email" style="display: block; margin-bottom: 0.15rem;"
+                  >E-mail</label
+                >
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="seuemail@exemplo.com"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                  "
+                />
+              </div>
+
+              <div style="margin-bottom: 0.6rem;">
+                <label for="igreja" style="display: block; margin-bottom: 0.15rem;"
+                  >Igreja / Ministério (opcional)</label
+                >
+                <input
+                  id="igreja"
+                  type="text"
+                  placeholder="Nome da igreja ou ministério"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                  "
+                />
+              </div>
+
+              <div style="margin-bottom: 0.8rem;">
+                <label
+                  for="motivo"
+                  style="display: block; margin-bottom: 0.15rem;"
+                  >Por que você quer fazer este curso?</label
+                >
+                <textarea
+                  id="motivo"
+                  rows="3"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                    resize: vertical;
+                  "
+                ></textarea>
+              </div>
+
+              <button
+                type="button"
+                class="btn-primary"
+                style="width: 100%; justify-content: center; display: inline-flex;"
+              >
+                Enviar interesse
+              </button>
+
+              <p
+                style="
+                  margin-top: 0.4rem;
+                  font-size: 0.78rem;
+                  color: #777;
+                  text-align: center;
+                "
+              >
+                Você também pode escrever diretamente para:
+                <strong>rubemacesso@gmail.com</strong>
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span>Curso de Apologética Cristológica – Instituto Raízes 2026</span>
+          <span>Instituto Raízes</span>
+        </div>
+
+        <div class="footer-coord">
+          <span>Coordenação do Curso:</span>
+          <strong>Rubem Gitison Rodrigues Alves</strong>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleNav() {
+        const nav = document.getElementById("nav-links");
+        nav.classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>

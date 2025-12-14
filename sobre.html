@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre o Instituto Raízes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça o Instituto Raízes — formação teológica bíblica, cristocêntrica e prática para líderes, discípulos e cristãos comprometidos com a Palavra.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #0e1a40;
+      --dourado: #cfaf58;
+      --vinho: #4a1f2a;
+      --branco: #ffffff;
+      --cinza: #d1d1d1;
+      --azul-neutro: #465a7e;
+      --texto: #222222;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Lato", sans-serif;
+      background: #f6f6f6;
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--azul-profundo), #070d25);
+      color: var(--branco);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-icon-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.4rem;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
+      background: var(--dourado);
+      transition: width .2s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--branco);
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 780px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 55px; right: 0;
+        flex-direction: column;
+        background: #070d25;
+        padding: 1rem 2rem;
+        width: 220px;
+      }
+      nav ul.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(circle at top, #182757, #070d25);
+      color: var(--branco);
+      padding: 3.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0.5rem auto;
+      color: #e6e6e6;
+    }
+
+    /* SECTION STYLE */
+
+    section {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 1.8rem 1.4rem;
+      background: var(--branco);
+      border-radius: 1rem;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      font-size: 1.4rem;
+      color: var(--azul-profundo);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    @media(max-width: 900px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+
+    .value-card {
+      background: #fafafa;
+      padding: 1.2rem;
+      border-left: 4px solid var(--dourado);
+      border-radius: 0.8rem;
+      transition: .2s;
+    }
+
+    .value-card:hover {
+      background: #fff5d2;
+      transform: translateY(-3px);
+    }
+
+    .value-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+      color: var(--vinho);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #070d25;
+      padding: 2rem 1.25rem;
+      text-align: center;
+      color: #cfcfcf;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="brand">
+      <img src="assets/img/logo_raizes.png" alt="Instituto Raízes" class="brand-icon-img">
+      <div class="brand-text">
+        <span>Instituto Raízes</span>
+      </div>
+    </div>
+
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1 class="hero-title">Sobre o Instituto Raízes</h1>
+  <p class="hero-subtitle">
+    Um ministério dedicado à formação teológica profunda, bíblica e cristocêntrica, para fortalecer igrejas, líderes e discípulos de Cristo em todo o Brasil.
+  </p>
+</section>
+
+<section>
+  <h2 class="section-title">Nossa História</h2>
+  <p>
+    O Instituto Raízes nasceu em 2023 com o propósito de oferecer uma formação teológica sólida, bíblica e aplicável à vida da igreja.  
+    Em um mundo marcado por incertezas e confusões doutrinárias, acreditamos que a igreja precisa retornar às suas raízes:  
+    a centralidade de Jesus Cristo, a fidelidade às Escrituras e a prática do discipulado.
+  </p>
+  <p>
+    Desde a sua fundação, o Instituto tem se dedicado a capacitar líderes, pregadores, professores de Escola Bíblica, discipuladores e cristãos comprometidos com o Reino de Deus.
+  </p>
+</section>
+
+<section>
+  <h2 class="section-title">Missão, Visão e Valores</h2>
+
+  <div class="values-grid">
+    <div class="value-card">
+      <h3 class="value-title">Missão</h3>
+      <p>
+        Formar discípulos e líderes por meio de ensino bíblico teológico profundo, que produz transformação de vida e maturidade espiritual.
+      </p>
+    </div>
+
+    <div class="value-card">
+      <h3 class="value-title">Visão</h3>
+      <p>
+        Ser uma referência nacional em formação teológica cristocêntrica, inspirando ministérios saudáveis e igrejas firmadas na Palavra.
+      </p>
+    </div>
+
+    <div class="value-card">
+      <h3 class="value-title">Valores</h3>
+      <p>
+        • Sola Scriptura  
+        • Centralidade de Cristo  
+        • Vida no Espírito  
+        • Excelência no ensino  
+        • Serviço ao Reino  
+        • Humildade e integridade  
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">O que oferecemos</h2>
+  <p>
+    O Instituto Raízes oferece cursos teológicos acessíveis, estruturados e ao mesmo tempo profundos, voltados para cristãos que desejam ir além do básico e crescer espiritualmente com fundamentos sólidos.
+  </p>
+
+  <ul style="margin-top: .7rem; padding-left: 1.2rem; list-style: square;">
+    <li>Formação teológica cristocêntrica</li>
+    <li>Cursos estruturados em trilhas de estudo</li>
+    <li>Materiais exclusivos e aulas dinâmicas</li>
+    <li>Acompanhamento pastoral e pedagógico</li>
+    <li>Ambiente seguro para dúvidas e perguntas</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="section-title">Coordenação</h2>
+  <p>
+    O Instituto Raízes é coordenado por:
+  </p>
+
+  <p><strong>Rubem Gitison Rodrigues Alves</strong></p>
+
+  <p>
+    Responsável pela direção pedagógica, pela organização dos cursos,  
+    pela visão teológica e pelo desenvolvimento do programa de formação.
+  </p>
+</section>
+
+<footer>
+  Instituto Raízes – Formação Teológica © 2026<br>
+  Todos os direitos reservados.
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById("nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cursos – Instituto Raízes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os cursos teológicos do Instituto Raízes e avance na sua formação bíblica e cristocêntrica.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #0e1a40;
+      --dourado: #cfaf58;
+      --vinho: #4a1f2a;
+      --branco: #ffffff;
+      --cinza: #d1d1d1;
+      --azul-neutro: #465a7e;
+      --texto: #222222;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Lato", sans-serif;
+      background: #f6f6f6;
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--azul-profundo), #070d25);
+      color: var(--branco);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-icon-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.4rem;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
+      background: var(--dourado);
+      transition: width .2s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--branco);
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 780px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 55px; right: 0;
+        flex-direction: column;
+        background: #070d25;
+        padding: 1rem 2rem;
+        width: 220px;
+      }
+      nav ul.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+
+    /* HERO */
+
+    .hero {
+      background: radial-gradient(circle at top, #182757 0, #070d25 60%);
+      color: var(--branco);
+      padding: 3.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0.5rem auto;
+      color: #e6e6e6;
+    }
+
+    /* COURSE GRID */
+
+    section {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 1.8rem 1.3rem;
+      background: var(--branco);
+      border-radius: 1rem;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      font-size: 1.4rem;
+      color: var(--azul-profundo);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.3rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .course-card {
+      background: #fafafa;
+      padding: 1.4rem;
+      border-radius: 0.9rem;
+      border-left: 4px solid var(--dourado);
+      transition: .25s;
+    }
+
+    .course-card:hover {
+      background: #fff4cf;
+      transform: translateY(-4px);
+    }
+
+    .course-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+      color: var(--vinho);
+    }
+
+    .course-desc {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--dourado);
+      color: var(--azul-profundo);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      transition: .2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--dourado);
+      color: #1a1306;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #070d25;
+      color: #c6c6c6;
+      padding: 2rem 1.25rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Card desativado */
+    .course-card.disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      background: #f1f1f1;
+      border-left-color: #bbbbbb;
+    }
+
+    .course-card.disabled:hover {
+      transform: none;
+      background: #f1f1f1;
+    }
+
+/* Botão desativado */
+.btn-disabled {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: #cccccc;
+  color: #555555;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: not-allowed;
+  border: 1px solid #bbbbbb;
+}
+
+/* Cartão desativado */
+.course-card.disabled {
+  opacity: 0.55;
+  background: #f1f1f1;
+  border-left-color: #bbbbbb;
+  cursor: not-allowed;
+}
+
+.course-card.disabled:hover {
+  background: #f1f1f1;
+  transform: none;
+}
+
+/* Botão desativado */
+.btn-disabled {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: #cccccc;
+  color: #555;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #aaa;
+  cursor: not-allowed;
+}
+
+
+</style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <img src="assets/img/logo_raizes.png" alt="Instituto Raízes" class="brand-icon-img">
+        <div class="brand-text">
+          <span>Instituto Raízes</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">Nossos Cursos</h1>
+    <p class="hero-subtitle">
+      Uma trilha de formação teológica completa, centrada em Cristo e fundamentada na Palavra.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Lista de Cursos</h2>
+
+    <div class="grid-3" id="lista-cursos">
+      <!-- CARDS GERADOS VIA JS -->
+
+  </div>
+</section>
+
+<footer>
+  Instituto Raízes – Formação Teológica © 2026<br>
+  Todos os direitos reservados.
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById("nav-links").classList.toggle("open");
+  }
+</script>
+
+<script>
+async function carregarCursos() {
+  const container = document.getElementById("lista-cursos");
+
+  try {
+    const response = await fetch("admin/data/cursos.json");
+    const cursos = await response.json();
+
+    cursos.forEach(curso => {
+      const card = document.createElement("div");
+
+      if (!curso.ativo) {
+        card.className = "course-card disabled";
+        card.innerHTML = `
+          <h3 class="course-title">${curso.nome}</h3>
+          <p class="course-desc">Conteúdo disponível em breve.</p>
+          <span class="btn-disabled">Em breve</span>
+        `;
+      } else {
+        card.className = "course-card";
+        card.innerHTML = `
+          <h3 class="course-title">${curso.nome}</h3>
+          <p class="course-desc">Acesse os detalhes completos deste curso.</p>
+          <a href="cursos/${curso.arquivo}" class="btn-outline">Ver Curso</a>
+        `;
+      }
+
+      container.appendChild(card);
+    });
+
+  } catch (erro) {
+    console.error("Erro ao carregar cursos:", erro);
+    document.getElementById("lista-cursos").innerHTML =
+      "<p>Não foi possível carregar os cursos.</p>";
+  }
+}
+
+carregarCursos();
+</script>
+
+
+</body>
+</html>

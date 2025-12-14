@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Instituto Raízes – Formação Teológica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Instituto Raízes – Formação Teológica Bíblica, Cristocêntrica e Aplicada para a Igreja. Cursos, treinamentos e capacitação ministerial.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #0e1a40;
+      --dourado: #cfaf58;
+      --vinho: #4a1f2a;
+      --branco: #ffffff;
+      --cinza: #d1d1d1;
+      --azul-neutro: #465a7e;
+      --texto: #222222;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Lato", sans-serif;
+      background: #f6f6f6;
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+
+    header {
+      background: linear-gradient(135deg, var(--azul-profundo), #070d25);
+      color: var(--branco);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-icon-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.4rem;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
+      background: var(--dourado);
+      transition: width .2s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    /* Mobile */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--branco);
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 780px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 55px; right: 0;
+        flex-direction: column;
+        background: #070d25;
+        padding: 1rem 2rem;
+        width: 220px;
+      }
+
+      nav ul.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+
+    /* HERO */
+
+    .hero {
+      background: radial-gradient(circle at top, #182757 0, #070d25 60%);
+      color: var(--branco);
+      padding: 4rem 1.25rem;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+      color: #e9e9e9;
+    }
+
+    .btn-primary {
+      background: var(--dourado);
+      color: #1a1306;
+      border-radius: 999px;
+      padding: 0.8rem 2rem;
+      font-size: 0.95rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #e6c87d;
+      transform: translateY(-2px);
+    }
+
+    /* SESSÕES */
+
+    section {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 1.5rem 1.2rem;
+      background: var(--branco);
+      border-radius: 1rem;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      font-size: 1.4rem;
+      color: var(--azul-profundo);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .course-card {
+      background: #fafafa;
+      padding: 1.4rem;
+      border-radius: 0.8rem;
+      border-left: 4px solid var(--dourado);
+      transition: 0.2s;
+    }
+
+    .course-card:hover {
+      background: #fff5d2;
+      transform: translateY(-3px);
+    }
+
+    .course-card.disabled {
+      opacity: 0.6;
+      filter: grayscale(100%);
+      cursor: not-allowed;
+      background: #f0f0f0;
+    }
+
+    .course-card.disabled:hover {
+      background: #f0f0f0;
+      transform: none;
+    }
+
+    .course-card .status {
+      margin-top: 0.6rem;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #777;
+    }
+
+
+
+    .course-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: var(--vinho);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #070d25;
+      color: #c6c6c6;
+      padding: 2rem 1.25rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <img src="assets/img/logo_raizes.png" class="brand-icon-img" alt="Instituto Raízes">
+        <div class="brand-text">
+          <span>Instituto Raízes</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">Bem-vindo ao Instituto Raízes</h1>
+    <p class="hero-subtitle">
+      Formação Teológica Bíblica, Cristocêntrica e aplicada à vida da Igreja.  
+      Cursos completos, profundos e acessíveis para cristãos, líderes e discípulos de Jesus.
+    </p>
+    <a href="cursos.html">
+      <button class="btn-primary">Ver Cursos Disponíveis</button>
+    </a>
+  </section>
+
+  <section>
+    <h2 class="section-title">Nossos Cursos</h2>
+    <p>Conheça a trilha teológica do Instituto Raízes:</p>
+
+    <div class="grid-3" id="home-cursos">
+      <!-- Cards gerados via JS -->
+    </div>
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Sobre o Instituto Raízes</h2>
+    <p>
+      O Instituto Raízes nasceu com a missão de oferecer formação teológica sólida, 
+      bíblica e prática, preparada para fortalecer a igreja local e capacitar novos 
+      líderes, discipuladores, pregadores e servos de Cristo.
+    </p>
+    <p>Nosso compromisso é unir profundidade bíblica com aplicabilidade pastoral.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Fale Conosco</h2>
+    <p>Quer saber mais? Entre em contato pelo e-mail:</p>
+    <p><strong>institutoraizes@gmail.com</strong></p>
+  </section>
+
+  <footer>
+    Instituto Raízes – Formação Teológica © 2026<br>
+    Coordenação Geral: <strong>Rubem Gitison Rodrigues Alves</strong>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById("nav-links").classList.toggle("open");
+    }
+  </script>
+
+  <script>
+function toggleNav() {
+  document.getElementById("nav-links").classList.toggle("open");
+}
+
+async function carregarCursosHome() {
+  const container = document.getElementById("home-cursos");
+
+  try {
+    const response = await fetch("admin/data/cursos.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Não foi possível carregar cursos.json");
+
+    const cursos = await response.json();
+
+    // ✅ Ordena por ID (você pode mudar para outro critério se quiser)
+    cursos.sort((a, b) => (a.id ?? 0) - (b.id ?? 0));
+
+    // ✅ Mostra só 3 na home (vitrine). Se quiser todos, remova o slice.
+    const vitrine = cursos.slice(0, 3);
+
+    container.innerHTML = "";
+
+    vitrine.forEach((curso) => {
+      const card = document.createElement(curso.ativo ? "a" : "div");
+
+      const nome = curso.nome || "Curso";
+      const descricao = curso.descricao || "Conteúdo em breve.";
+      const arquivo = curso.arquivo || "";
+
+      if (curso.ativo) {
+        card.href = `cursos/${arquivo}`;
+        card.className = "course-card";
+        card.innerHTML = `
+          <h3 class="course-title">${nome}</h3>
+          <p>${descricao}</p>
+        `;
+      } else {
+        card.className = "course-card disabled";
+        card.innerHTML = `
+          <h3 class="course-title">${nome}</h3>
+          <p>${descricao}</p>
+          <span class="status">Em breve</span>
+        `;
+      }
+
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error(err);
+    container.innerHTML = `
+      <div class="course-card disabled">
+        <h3 class="course-title">Cursos</h3>
+        <p>Não foi possível carregar a lista de cursos no momento.</p>
+        <span class="status">Indisponível</span>
+      </div>
+    `;
+  }
+}
+
+carregarCursosHome();
+</script>
+
+
+</body>
+</html>

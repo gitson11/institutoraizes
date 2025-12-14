@@ -1,0 +1,59 @@
+[
+    {
+    "id": 1,
+    "slug": "cristologia",
+    "nome": "Curso de Cristologia",
+    "descricao": "Estudo da pessoa e obra de Jesus Cristo.",
+    "carga_horaria": "60h",
+    "ativo": true,
+    "pagina": "cristologia.html"
+    },
+    {
+    "id": 2,
+    "slug": "escatologia",
+    "nome": "Escatologia Cristocêntrica",
+    "descricao": "A esperança cristã fundamentada no retorno de Cristo.",
+    "carga_horaria": "60h",
+    "ativo": true,
+    "pagina": "escatologia.html"
+    },
+    {
+    "id": 3,
+    "slug": "apologetica",
+    "nome": "Apologética Cristológica",
+    "descricao": "Defesa bíblica da identidade de Jesus.",
+    "carga_horaria": "40h",
+    "ativo": false,
+    "pagina": "apologetica.html"
+    },
+    {
+        "id": 4,
+        "slug": "historia_igreja",
+        "nome": "História da Igreja",
+        "arquivo": "historia_igreja.html",
+        "ativo": false
+    },
+    {
+        "id": 5,
+        "slug": "hermeneutica2",
+        "nome": "Hermenêutica",
+        "arquivo": "hermeneutica2.html",
+        "ativo": false
+    },
+    {
+        "id": 6,
+        "slug": "sistematica",
+        "nome": "Teologia Sistemática Básica",
+        "arquivo": "sistematica.html",
+        "ativo": false
+    },
+    {
+        "id": 7,
+        "nome": "Harmatiologia",
+        "slug": "A doutrina do pecado",
+        "arquivo": "harmatiologia.html",
+        "descricao": "",
+        "ativo": false
+    }
+
+]

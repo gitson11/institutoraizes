@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nome": "Giliard Soares",
+        "email": "giliard_s@raizes.com",
+        "curso_slug": "Escatologia Cristocêntrica",
+        "concluido": true,
+        "data_conclusao": "8\/12\/2025"
+    },
+    {
+        "nome": "Erika Barbosa",
+        "email": "erika@raizes.com",
+        "curso_slug": "escatologia",
+        "data_conclusao": "08\/12\/2025",
+        "id": 2,
+        "concluido": true
+    },
+    {
+        "id": 3,
+        "nome": "Camila Lima Pereira",
+        "email": "camila@raizes.com",
+        "curso_slug": "cristologia",
+        "concluido": false,
+        "data_conclusao": ""
+    }
+]

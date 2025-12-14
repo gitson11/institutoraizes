@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Curso de História da Igreja – Instituto Raízes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Curso de História da Igreja do Instituto Raízes – panorama bíblico, teológico e histórico da formação, desenvolvimento e expansão da Igreja ao longo dos séculos."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --azul-profundo: #0e1a40;
+        --dourado: #cfaf58;
+        --vinho: #4a1f2a;
+        --branco: #ffffff;
+        --cinza: #d1d1d1;
+        --azul-neutro: #465a7e;
+        --texto: #222222;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        color: var(--texto);
+        background-color: #f7f7f7;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--azul-profundo), #070d25);
+        color: var(--branco);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0.8rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .brand-icon-img {
+        height: 38px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .brand-text span:first-child {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .brand-text span:last-child {
+        font-size: 0.8rem;
+        opacity: 0.85;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.3rem;
+        font-size: 0.9rem;
+      }
+
+      nav a {
+        position: relative;
+        padding-bottom: 0.1rem;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--dourado);
+        transition: width 0.2s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        color: var(--branco);
+      }
+
+      @media (max-width: 780px) {
+        nav ul {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 56px;
+          right: 0;
+          width: 220px;
+          padding: 0.75rem 1.25rem;
+          background: #070d25;
+          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+        }
+        nav ul.open {
+          display: flex;
+        }
+        .nav-toggle {
+          display: block;
+        }
+      }
+
+      .hero {
+        background: radial-gradient(circle at top, #182757 0, #070d25 50%);
+        color: var(--branco);
+        padding: 3.5rem 1.25rem 3rem;
+      }
+
+      .hero-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .hero-tag {
+        display: inline-flex;
+        gap: 0.4rem;
+        padding: 0.2rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid rgba(207, 175, 88, 0.6);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.12em;
+        color: #f0e7c4;
+      }
+
+      .hero-title {
+        font-family: "Cinzel", serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-subtitle {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        color: #e5e5e5;
+        max-width: 32rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .hero-info-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .chip {
+        display: inline-flex;
+        gap: 0.35rem;
+        padding: 0.25rem 0.9rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        background: rgba(7, 13, 37, 0.9);
+        border: 1px solid rgba(207, 175, 88, 0.5);
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: var(--dourado);
+        padding: 0.6rem 1.6rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #1a1306;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border-radius: 999px;
+        border: 1px solid #e5e5e5;
+        color: #f5f5f5;
+        padding: 0.5rem 1.4rem;
+      }
+
+      .hero-note {
+        color: #c6c6c6;
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+      }
+
+      .hero-card {
+        background: rgba(7, 13, 37, 0.9);
+        padding: 1.5rem 1.4rem;
+        border-radius: 1.2rem;
+        border: 1px solid rgba(207, 175, 88, 0.6);
+      }
+
+      .hero-card-title {
+        color: var(--dourado);
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      main {
+        padding: 2.5rem 1.25rem;
+      }
+
+      section {
+        max-width: 1100px;
+        margin: 3.5rem auto 2.5rem;
+        background: var(--branco);
+        border-radius: 1.2rem;
+        padding: 1.8rem 1.7rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.3rem;
+        color: var(--azul-profundo);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .section-tag {
+        font-size: 0.75rem;
+        color: var(--azul-neutro);
+        text-transform: uppercase;
+      }
+
+      ul.styled {
+        list-style: none;
+      }
+
+      ul.styled li {
+        padding-left: 1.2rem;
+        margin-bottom: 0.4rem;
+        position: relative;
+      }
+
+      ul.styled li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--dourado);
+      }
+
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.1rem;
+      }
+
+      .module-card {
+        background: #fafafa;
+        padding: 1rem 1rem 0.9rem;
+        border: 1px solid #ececec;
+        border-radius: 0.9rem;
+      }
+
+      .module-title {
+        font-family: "Playfair Display", serif;
+        color: var(--vinho);
+        margin-bottom: 0.3rem;
+      }
+
+      .module-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .module-list li {
+        margin-bottom: 0.25rem;
+        position: relative;
+        padding-left: 1.1rem;
+      }
+
+      .module-list li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--azul-neutro);
+      }
+
+      .callout {
+        background: #fffaf0;
+        border-left: 4px solid var(--dourado);
+        padding: 0.9rem 1rem;
+        border-radius: 0.9rem;
+        font-size: 0.86rem;
+      }
+
+      footer {
+        background: #070d25;
+        padding: 1.5rem;
+        text-align: center;
+        color: #c6c6c6;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="brand">
+          <img src="../logo_raizes.png" alt="Instituto Raízes" class="brand-icon-img" />
+          <div class="brand-text">
+            <span>Instituto Raízes</span>
+            <span>Curso de História da Igreja 2026</span>
+          </div>
+        </div>
+
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+
+        <nav>
+          <ul id="nav-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../sobre.html">Sobre</a></li>
+            <li><a href="../cursos.html">Cursos</a></li>
+            <li><a href="../contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-tag">
+            <span>Formação Teológica</span>
+            <span>•</span>
+            <span>História da Igreja</span>
+          </div>
+
+          <h1 class="hero-title">Curso de História da Igreja</h1>
+
+          <p class="hero-subtitle">
+            Uma jornada pelos principais eventos, personagens, perseguições, concílios, reformas e movimentos que moldaram a fé cristã ao longo de dois mil anos.
+          </p>
+
+          <div class="hero-info-chips">
+            <div class="chip">📅 Início: a definir – 2026</div>
+            <div class="chip">⏱️ 60h • 2h semanais</div>
+            <div class="chip">📘 Nível: Formação Teológica</div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#inscricao"><button class="btn-primary">Quero me inscrever</button></a>
+            <a href="#conteudo"><button class="btn-outline">Ver conteúdo programático →</button></a>
+          </div>
+
+          <p class="hero-note">
+            Este curso é recomendado após a disciplina de Cristologia.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <h2 class="hero-card-title">Por que estudar História da Igreja?</h2>
+          <p>
+            Conhecer a trajetória da igreja ao longo dos séculos fortalece nossa fé, nos protege de erros antigos e nos ajuda a entender como Deus conduziu seu povo através da história.
+          </p>
+          <ul>
+            <li>Aprender com acertos e falhas do passado.</li>
+            <li>Entender como surgiram doutrinas, concílios e tradições.</li>
+            <li>Compreender o cenário atual a partir das raízes históricas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN -->
+    <main>
+      <!-- EMENTA -->
+      <section id="sobre">
+        <div class="section-header">
+          <h2 class="section-title">Ementa do Curso</h2>
+          <span class="section-tag">Sobre o curso</span>
+        </div>
+
+        <p>
+          Estudo panorâmico e aprofundado da história da Igreja, desde os primórdios do cristianismo no século I até o contexto contemporâneo. O curso contempla perseguições, expansão missionária, formação do cânon bíblico, controvérsias doutrinárias, concílios ecumênicos, monasticismo, reforma protestante, movimentos modernos e pós-modernos.
+        </p>
+
+        <p>
+          Ao longo da disciplina, o aluno será conduzido a compreender como Cristo edifica sua igreja através dos séculos, preservando a verdade do evangelho, corrigindo rumos e despertando novos movimentos de avivamento, reforma e missão.
+        </p>
+
+        <div class="callout">
+          <strong>Pré-requisito recomendado:</strong> Cristologia e Introdução à Teologia.
+        </div>
+      </section>
+
+      <!-- OBJETIVOS -->
+      <section id="objetivos">
+        <div class="section-header">
+          <h2 class="section-title">Objetivos & Competências</h2>
+          <span class="section-tag">Formação integral</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3 style="font-family: 'Playfair Display', serif">Objetivo geral</h3>
+            <p>
+              Conduzir o estudante a compreender os principais acontecimentos, personagens e movimentos que moldaram a história da fé cristã, interpretando-os à luz das Escrituras e de uma perspectiva cristocêntrica.
+            </p>
+
+            <h3 style="font-family: 'Playfair Display', serif">Objetivos específicos</h3>
+            <ul class="styled">
+              <li>Compreender o desenvolvimento da igreja desde o século I.</li>
+              <li>Interpretar períodos como perseguições, idade média e reforma.</li>
+              <li>Avaliar concílios ecumênicos e sua relevância doutrinária.</li>
+              <li>Reconhecer movimentos de avivamento e expansão missionária.</li>
+              <li>Conectar a história da igreja com a prática pastoral atual.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-family: 'Playfair Display', serif">Competências desenvolvidas</h3>
+            <ul class="styled">
+              <li>Leitura histórica crítica com perspectiva cristocêntrica.</li>
+              <li>Compreensão do desenvolvimento doutrinário ao longo dos séculos.</li>
+              <li>Discernimento entre tradição bíblica e tradições humanas.</li>
+              <li>Capacidade de contextualizar desafios modernos à luz da história.</li>
+              <li>Entendimento da missão da igreja em diferentes épocas.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PÚBLICO ALVO -->
+      <section id="publico">
+        <div class="section-header">
+          <h2 class="section-title">Público-alvo</h2>
+          <span class="section-tag">Para quem é este curso?</span>
+        </div>
+
+        <p>
+          Destinado a todos que desejam compreender as raízes históricas da fé cristã e sua relevância para a igreja hoje.
+        </p>
+
+        <ul class="styled" style="margin-top: 0.6rem">
+          <li>Líderes, pregadores e professores de EBD.</li>
+          <li>Estudantes de teologia e ministério.</li>
+          <li>Cristãos que desejam conhecer melhor o passado da igreja.</li>
+          <li>Discípulos que desejam compreender desafios modernos.</li>
+        </ul>
+      </section>
+
+      <!-- CONTEÚDO PROGRAMÁTICO -->
+      <section id="conteudo">
+        <div class="section-header">
+          <h2 class="section-title">Conteúdo Programático</h2>
+          <span class="section-tag">Módulos do curso</span>
+        </div>
+
+        <p>
+          O curso é estruturado em oito módulos, cobrindo desde a igreja apostólica até a igreja contemporânea.
+        </p>
+
+        <div class="modules-grid">
+          <div class="module-card">
+            <h3 class="module-title">Módulo 1 – Igreja Primitiva (séculos I–III)</h3>
+            <p class="module-tagline">A fé sob perseguição.</p>
+            <ul class="module-list">
+              <li>Era apostólica e pós-apostólica.</li>
+              <li>Primeiras heresias e defesa da fé.</li>
+              <li>Os pais da igreja.</li>
+              <li>Perseguições romanas.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 2 – Concílios e Formação Doutrinária</h3>
+            <p class="module-tagline">Cristo edifica sua igreja.</p>
+            <ul class="module-list">
+              <li>Concílio de Niceia.</li>
+              <li>Concílio de Constantinopla.</li>
+              <li>Concílio de Éfeso e Calcedônia.</li>
+              <li>Definição da ortodoxia cristã.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 3 – A Idade Média</h3>
+            <p class="module-tagline">Monasticismo, cruzadas e escolástica.</p>
+            <ul class="module-list">
+              <li>Monasticismo: contribuição e desvios.</li>
+              <li>A ascensão do papado.</li>
+              <li>As cruzadas.</li>
+              <li>Tomás de Aquino e a escolástica.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 4 – Reforma Protestante</h3>
+            <p class="module-tagline">Um retorno às Escrituras.</p>
+            <ul class="module-list">
+              <li>Lutero e a justificação pela fé.</li>
+              <li>Calvino e a teologia reformada.</li>
+              <li>Zwinglio, anabatistas e outros movimentos.</li>
+              <li>Contrarreforma católica.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 5 – A Expansão Missionária Mundial</h3>
+            <p class="module-tagline">O evangelho até os confins da terra.</p>
+            <ul class="module-list">
+              <li>Movimentos missionários modernos.</li>
+              <li>William Carey e o “pai das missões modernas”.</li>
+              <li>A evangelização nas Américas, Ásia e África.</li>
+              <li>Impactos culturais e desafios éticos.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 6 – Avivamentos e Novos Movimentos</h3>
+            <p class="module-tagline">O Espírito movendo a igreja.</p>
+            <ul class="module-list">
+              <li>Primeiro e Segundo Grande Despertamento.</li>
+              <li>John Wesley, Whitefield e Finney.</li>
+              <li>Pentecostalismo e movimentos carismáticos.</li>
+              <li>Renovação da igreja na modernidade.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 7 – Igreja Contemporânea</h3>
+            <p class="module-tagline">Desafios do século XXI.</p>
+            <ul class="module-list">
+              <li>Igreja e secularização.</li>
+              <li>Novas expressões de fé.</li>
+              <li>Cosmovisões modernas e pós-modernas.</li>
+              <li>A missão da igreja hoje.</li>
+            </ul>
+          </div>
+
+          <div class="module-card">
+            <h3 class="module-title">Módulo 8 – Oficina de Interpretação Histórica</h3>
+            <p class="module-tagline">Analisando o passado para servir no presente.</p>
+            <ul class="module-list">
+              <li>Leitura de fontes históricas.</li>
+              <li>Análise de movimentos e personagens.</li>
+              <li>Conexões entre história e teologia.</li>
+              <li>Aplicações para a igreja local.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSCRIÇÃO -->
+      <section id="inscricao">
+        <div class="section-header">
+          <h2 class="section-title">Inscrição & Informações</h2>
+          <span class="section-tag">Próximos passos</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <p>
+              As vagas são limitadas para garantir interação, perguntas e
+              acompanhamento individual.
+            </p>
+            <p style="margin-top: 0.5rem">
+              Entre em contato com a coordenação para receber informações sobre
+              horários, modalidade e investimento.
+            </p>
+
+            <ul class="styled" style="margin-top: 0.6rem">
+              <li>Carga horária: 60h.</li>
+              <li>Ritmo: 2 horas semanais.</li>
+              <li>Possibilidade de aulas extras e oficinas.</li>
+              <li>Certificado pelo Instituto Raízes.</li>
+            </ul>
+          </div>
+
+          <div>
+            <form
+              style="
+                background: #fafafa;
+                border-radius: 0.9rem;
+                border: 1px solid #ececec;
+                padding: 1rem 1rem 0.9rem;
+                font-size: 0.9rem;
+              "
+            >
+              <h3
+                style="
+                  font-family: 'Playfair Display', serif;
+                  font-size: 1rem;
+                  margin-bottom: 0.6rem;
+                  color: var(--azul-profundo);
+                "
+              >
+                Formulário de interesse
+              </h3>
+              <p style="font-size: 0.85rem; margin-bottom: 0.7rem">
+                Este é um formulário demonstrativo. Você poderá integrar com
+                Google Forms ou outro sistema de inscrição posteriormente.
+              </p>
+
+              <div style="margin-bottom: 0.5rem">
+                <label>Nome completo</label>
+                <input
+                  type="text"
+                  placeholder="Seu nome"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                  "
+                />
+              </div>
+
+              <div style="margin-bottom: 0.5rem">
+                <label>E-mail</label>
+                <input
+                  type="email"
+                  placeholder="seuemail@exemplo.com"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                  "
+                />
+              </div>
+
+              <div style="margin-bottom: 0.6rem">
+                <label>Igreja / Ministério (opcional)</label>
+                <input
+                  type="text"
+                  placeholder="Nome da igreja ou ministério"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                  "
+                />
+              </div>
+
+              <div style="margin-bottom: 0.8rem">
+                <label>Por que você deseja fazer este curso?</label>
+                <textarea
+                  rows="3"
+                  style="
+                    width: 100%;
+                    padding: 0.4rem 0.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #d8d8d8;
+                    font-size: 0.9rem;
+                    resize: vertical;
+                  "
+                ></textarea>
+              </div>
+
+              <button
+                type="button"
+                class="btn-primary"
+                style="width: 100%; justify-content: center; display: inline-flex"
+              >
+                Enviar interesse
+              </button>
+
+              <p
+                style="
+                  margin-top: 0.4rem;
+                  font-size: 0.78rem;
+                  color: #777;
+                  text-align: center;
+                "
+              >
+                Você também pode escrever diretamente para:
+                <strong>institutoraizesgmail.com</strong>
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span>Curso de História da Igreja – Instituto Raízes 2026</span>
+          <span>Instituto Raízes</span>
+        </div>
+
+        <div class="footer-coord">
+          <span>Coordenação do Curso:</span>
+          <strong>Rubem Gitison Rodrigues Alves</strong>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleNav() {
+        document.getElementById("nav-links").classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
