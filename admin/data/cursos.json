@@ -6,7 +6,7 @@
     "descricao": "Estudo da pessoa e obra de Jesus Cristo.",
     "carga_horaria": "60h",
     "ativo": true,
-    "pagina": "cristologia.html"
+    "arquivo": "cristologia.html"
     },
     {
     "id": 2,
@@ -15,7 +15,7 @@
     "descricao": "A esperança cristã fundamentada no retorno de Cristo.",
     "carga_horaria": "60h",
     "ativo": true,
-    "pagina": "escatologia.html"
+    "arquivo": "escatologia.html"
     },
     {
     "id": 3,
@@ -24,7 +24,7 @@
     "descricao": "Defesa bíblica da identidade de Jesus.",
     "carga_horaria": "40h",
     "ativo": false,
-    "pagina": "apologetica.html"
+    "arquivo": "apologetica.html"
     },
     {
         "id": 4,
